@@ -1,0 +1,39 @@
+rx-2.1.0 (04-dec-99) 
+
+	moved to Haskell-98 (tested w/ hugs-98-november-99)
+	changes in modules:
+	Semantik, Gram2FA, State, ExpParse, PI, Syntax, Lex
+	- zero moves from MonadZero to MonadPlus.mzero
+	- MonadPlus operations: (++) -> mplus
+	- Functor.map now called Functor.fmap
+	- sequence now returns something 
+		"fixed" by appending return () here and there
+
+rx-2.0.2 (07-jul-99)
+	
+	Sorters.hs: fixed instance Ord Plug
+	(caused msortwith to fail)
+
+	FiniteMap.hs: more general type for intersectFM_C
+
+rx-2.0.2 (18-dec-98)
+	
+	added FAmerge.hs,
+	included "merge" in default function table
+
+rx-2.0.2 (18-sep-98)
+
+	fixed a nice bug in FAunion.hs
+
+	slight rearrangements to allow other haskell programs
+	to link with RX
+
+	recast documentation into html
+
+rx-2.0.1 (5-nov-97)
+
+	fixed export lists to make rx compile with hbc
+
+rx-2.0.0 (1-nov-97) 
+
+	basic release	
