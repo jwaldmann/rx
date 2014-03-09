@@ -1,11 +1,12 @@
 MAIN = rxdoc
 
 
-RX = ../src/RX
+# assume it is installed
+RX = rx
 
 RX_OPTS = 
 
-RTS_OPTS = +RTS -H50M -K10M -RTS
+# RTS_OPTS = +RTS -H50M -K10M -RTS
 
 WWW = $(HOME)/.www/rx
 
@@ -23,7 +24,7 @@ clean :
 
 
 %.tex : %.lit 
-	$(RX) $(RTS_OPTS) $(RX_OPTS) current=text code=latex $< |tee $@
+	$(RX) $(RTS_OPTS) $(RX_OPTS) current=text code=latex $< > $@
 
 %.pdf : %.tex
 	- pdflatex "\\nonstopmode\\input $<"
@@ -33,4 +34,5 @@ clean :
 
 %.ps : %.dvi
 	dvips -t a4 $< -o $@
+
 

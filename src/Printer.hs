@@ -1,5 +1,8 @@
 -- | used for HTML output in CGI
 
+{-# language TypeSynonymInstances #-}
+{-# language FlexibleInstances #-}
+
 module Printer where
 
 import Write
