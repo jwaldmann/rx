@@ -77,7 +77,7 @@ cShow  seq	= flatten (0) True seq []
 
 
 cShows seq rest = cShow seq ++ rest
-cLength seq = length (cShow seq) -- *not* the best way to do this!
+cLength seq = length (cShow seq) --  *not* the best way to do this!
 
 
 data WorkItem = WI Int CSeq -- indentation, and sequence

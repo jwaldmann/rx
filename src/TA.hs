@@ -32,11 +32,11 @@ data STerm a = STerm TCon [a]
 
 -- hbc complains
 
-{- # SPECIALIZE instance Eq (STerm Int) #-}
-{- # SPECIALIZE instance Ord (STerm Int) #-}
+{-  # SPECIALIZE instance Eq (STerm Int) #-}
+{-  # SPECIALIZE instance Ord (STerm Int) #-}
 
-{- # SPECIALIZE instance Eq (STerm (Int, Int)) #-}
-{- # SPECIALIZE instance Ord (STerm (Int, Int)) #-}
+{-  # SPECIALIZE instance Eq (STerm (Int, Int)) #-}
+{-  # SPECIALIZE instance Ord (STerm (Int, Int)) #-}
 
 
 stcon (STerm tcon _) = tcon

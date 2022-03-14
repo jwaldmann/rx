@@ -32,11 +32,11 @@ import List (inits, tails)
 
 -- hbc complains
 
-{- # SPECIALIZE instance Eq (Set Int) #-}
-{- # SPECIALIZE instance Ord (Set Int) #-}
+{-  # SPECIALIZE instance Eq (Set Int) #-}
+{-  # SPECIALIZE instance Ord (Set Int) #-}
 
-{- # SPECIALIZE instance Eq (Set (Int, Int)) #-}
-{- # SPECIALIZE instance Ord (Set (Int, Int)) #-}
+{-  # SPECIALIZE instance Eq (Set (Int, Int)) #-}
+{-  # SPECIALIZE instance Ord (Set (Int, Int)) #-}
 
 
 exists (Just _) = True

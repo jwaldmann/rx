@@ -2,7 +2,7 @@
 -- see http://haskell.org/cabal/users-guide/
 
 name:                rx
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:            Computations with regular tree languages
 -- description:         
 license:             GPL-3
@@ -14,19 +14,40 @@ category:            Math
 build-type:          Simple
 extra-source-files:  CHANGELOG
 cabal-version:       >=1.10
+tested-with:    GHC == 7.0.4 , GHC == 7.4.2
 
-executable rx
-  main-is:             RX.hs
-  -- other-modules:       
-  -- other-extensions:    
-  build-depends:       haskell98, containers >=0.5, pretty >=1.1 
+library
+  exposed-modules:
+    BackS CharSeq Command Cross
+    Defaults Exp2FA ExpParse FA2Exp FAcheat FAcmpct FAcon FAconv FAdet
+    FAhom FA FAintersect FAkeepcons FAkeepst FAlquotient FAmap FAmerge
+    FAmin FAminus FAneg FAnormalize FArquotient FAstar FAsubtrans FAtimes
+    FAtypes FAunify FAunion FAuseful FiniteMap ForS Gen GMain
+    Gram2FA Grammar Heave Heuristic Ids IdStack Instance Lex Loop 
+    Maybes Onestep Options Parse PI Prec PrettyClass
+    Pretty Reader Reuse Semantik Set Sorters
+    State Stuff Syntax TA Trace WrapSubtrans Write
+    -- BackwardS CloseS CBackwardS CForwardS ForwardS SaturnS Normalizing 
+  build-depends:       haskell98, containers ==0.5.10.2, pretty >=1.1 
+  if impl(ghc<7.2)
+    build-depends:     base
   hs-source-dirs:      src
   default-language:    Haskell98
+  -- other-extensions:    
+                     
+executable rx
+  main-is:             RX.hs
+  hs-source-dirs:      main
+  build-depends:       rx, haskell98
+  if impl(ghc<7.2)
+    build-depends:     base
 
 executable rx-cgi
   main-is:             RX_CGI.hs
-  -- other-modules:       
-  -- other-extensions:    
-  build-depends:       haskell98, containers >=0.5, mtl, pretty >=1.1 , cgi >= 3001, xhtml
-  hs-source-dirs:      src
+  other-modules:       Printer
+  build-depends:       rx, haskell98, mtl, cgi >= 3001, xhtml
+  if impl(ghc<7.2)
+    build-depends:     base
+  hs-source-dirs:      main
   default-language:    Haskell98
+  -- other-extensions:    

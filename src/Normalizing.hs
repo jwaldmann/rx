@@ -40,11 +40,12 @@ components a  = stronglyConnComp $ do
     ( p, ts ) <- fmToList moves
     return ( p, p, concat $ map stargs $ setToList ts )
 
+{-
 instance Show v => Show (SCC v) where
     show c = case c of
         AcyclicSCC v -> "A " ++ show v
         CyclicSCC vs -> "C " ++ show vs
-
+-}
 
 labelled :: BDFA Int -> Doc
 labelled a @ (BDFA cons all starts moves) = vcat
